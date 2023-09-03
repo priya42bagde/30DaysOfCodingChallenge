@@ -56,6 +56,7 @@ Approach 2: Using the reduce() method
 Approach 3: Using the sort() method
 Approach 4: Using the Math.max() function with apply()
 Approach 5: Using the forEach() method
+Approach 6: Using a for loop
 
 const numbers = [12, 34, 56, 78, 90];
 

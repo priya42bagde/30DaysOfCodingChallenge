@@ -83,3 +83,36 @@ for (let i = 1; i < numbers.length; i++) {
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 #Day3: 
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+1.let sum = 0;
+for (let i = 0; i < numbers.length; i++) {
+  sum += numbers[i];
+}
+
+2.const sum = numbers.reduce((acc, current) => acc + current, 0);
+
+3.let sum = 0;
+numbers.forEach((number) => {
+  sum += number;
+});
+
+4.let sum = 0;
+for (const number of numbers) {
+  sum += number;
+}
+
+5.let sum = 0;
+for (const index in numbers) {
+  sum += numbers[index];
+}
+
+6.let sum = 0;
+let i = 0;
+while (i < numbers.length) {
+  sum += numbers[i];
+  i++;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------

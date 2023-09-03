@@ -1,4 +1,4 @@
-Reverse an Array:
+#Day1: Reverse an Array:
 There are multiple approaches to reverse an array in JavaScript
 Approach 1: Using the reverse() method
 Approach 2: Using the spread operator
@@ -48,3 +48,37 @@ for (let i = originalArray.length - 1; i >= 0; i--) {
 }
 const reversedArray = reverseArray(originalArray);
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Day2: Find the maximum number in an array.
+
+There are multiple approaches in JavaScript
+Approach 1: Using the Math.max() function and the spread operator
+Approach 2: Using the reduce() method
+Approach 3: Using the sort() method
+Approach 4: Using the Math.max() function with apply()
+Approach 5: Using the forEach() method
+
+const numbers = [12, 34, 56, 78, 90];
+
+1.const maxNumber = Math.max(...numbers);
+
+2.const maxNumber = numbers.reduce((max, current) => (current > max ? current : max), numbers[0]);
+
+3.const maxNumber = numbers.slice().sort((a, b) => b - a)[0];
+
+4.const maxNumber = Math.max.apply(null, numbers);
+
+5.let maxNumber = numbers[0];
+numbers.forEach((number) => {
+  if (number > maxNumber4) {
+    maxNumber = number;
+  }
+});
+
+6.let maxNumber = numbers[0];
+for (let i = 1; i < numbers.length; i++) {
+  if (numbers[i] > maxNumber) {
+    maxNumber = numbers[i];
+  }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+#Day3: 

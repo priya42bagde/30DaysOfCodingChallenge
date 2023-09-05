@@ -116,3 +116,49 @@ while (i < numbers.length) {
   i++;
 }
 -----------------------------------------------------------------------------------------------------------------------------------------------------
+4. Remove duplicates from an array:
+Approach 1: Using sets
+Approach 2: Using filter
+Approach 3: Using reduce:
+Approach 4: Using for-of loop
+Approach 5: Using forEach
+Approach 6: Using indexof
+Approach 7: Using map
+
+const array = [1, 2, 2, 3, 4, 4, 5];
+
+1.const uniqueArray = [...new Set(array)];
+2.uniqueArray = array.filter((value, index, self) => self.indexOf(value) === index);
+3.const uniqueArray = array.reduce((accumulator, currentValue) => {
+  if (!accumulator.includes(currentValue)) {
+    accumulator.push(currentValue);
+  }
+  return accumulator;
+}, []);
+4.const uniqueArray = [];
+for (const item of array) {
+  if (!uniqueArray.includes(item)) {
+    uniqueArray.push(item);
+  }
+}
+5.const uniqueArray = [];
+array.forEach((item) => {
+  if (!uniqueArray.includes(item)) {
+    uniqueArray.push(item);
+  }
+});
+6.const uniqueArray = [];
+for (let i = 0; i < array.length; i++) {
+  if (uniqueArray.indexOf(array[i]) === -1) {
+    uniqueArray.push(array[i]);
+  }
+}
+7.const map = new Map();
+const uniqueArray = [];
+for (const item of array) {
+  if (!map.has(item)) {
+    map.set(item, true);
+    uniqueArray.push(item);
+  }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------

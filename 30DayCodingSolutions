@@ -162,3 +162,54 @@ for (const item of array) {
   }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------------------
+5. Implement the custom sorting for an array:
+function customSort(arr) {
+    const len = arr.length;
+
+    for (let i = 0; i < len - 1; i++) {
+        for (let j = 0; j < len - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap elements if they are in the wrong order
+                const temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    return arr;
+}
+
+// Example usage:
+const myArray = [5, 2, 9, 3, 6];
+const sortedArray = customSort(myArray);
+console.log(sortedArray);
+----------------------------------------------------------------------------------------------------------------------------------------------------
+6. Find the intersection of two arrays.
+
+Approach 1: Using Set, filter and includes (ES6)
+Approach 2: Using Set Intersection
+Approach 3: Using filter and includes (ES6)
+Approach 4: Using filter and a Set (ES6)
+Approach 5: Using reduce and a Set (ES6)
+
+1.const findIntersection1 = (arr1, arr2) => [...new Set(arr1.filter(element => arr2.includes(element)))];
+
+2.const findIntersection2 = (arr1, arr2) => [...new Set(arr1.filter(element => new Set(arr2).has(element)))];
+
+3.const findIntersection4 = (arr1, arr2) => arr1.filter(element => arr2.includes(element));
+
+4.const findIntersection5 = (arr1, arr2) => arr1.filter(element => new Set(arr2).has(element));
+
+5.const findIntersection6 = (arr1, arr2) => arr1.reduce((intersection, element) => new Set(arr2).has(element) 
+                                            ? [...intersection, element] : intersection, []);
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+7. 
+
+
+
+
+
+
+

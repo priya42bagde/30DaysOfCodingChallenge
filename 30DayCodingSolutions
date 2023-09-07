@@ -205,8 +205,33 @@ Approach 5: Using reduce and a Set (ES6)
                                             ? [...intersection, element] : intersection, []);
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-7. 
+7. Rotate an array to the right with xyz 
 
+1.function rotate(array, stepsToShift) {
+    for (var i = 0; i < stepsToShift; i++) {
+        array.unshift(array.pop());
+    }
+    return array;
+}
+console.log(rotate([1,2,5,6,7,8], 3))
+
+2.const rotateArray2 = function(nums, k) {
+  // reverse helper function
+  function reverse(arr, start, end) {
+    while (start < end) {
+      [arr[start], arr[end]] = [arr[end], arr[start]];
+      start++;
+      end--;
+    }
+  }
+  k %= nums.length;
+  reverse(nums, 0, (nums.length - 1));
+  reverse(nums, 0, (k - 1));
+  reverse(nums, k, (nums.length - 1));
+  return nums;
+}
+console.log(rotateArray2([1,2,5,6,7,8], 3))
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 

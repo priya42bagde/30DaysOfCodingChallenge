@@ -253,6 +253,46 @@ function maxSubarraySum(arr) {
 const array = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 console.log(maxSubarraySum(array)); // Output: 6 (the subarray [4,-1,2,1] has the largest sum)
 ------------------------------------------------------------------------------------------------------------------------------------------------------
+9. Check if an array is palindrome or not:
+// Approach 1: Using a Loop
+function isPalindromeLoop(arr) {
+  for (let i = 0; i < arr.length / 2; i++) {
+    if (arr[i] !== arr[arr.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// Approach 2: Using Array Reverse and Comparison
+function isPalindromeReverse(arr) {
+  const reversedArray = [...arr].reverse();
+  return JSON.stringify(arr) === JSON.stringify(reversedArray);
+}
+
+// Approach 3: Using the every() method
+function isPalindromeEvery(arr) {
+  return arr.every((value, index) => value === arr[arr.length - 1 - index]);
+}
+
+// Approach 4: Using Recursion
+function isPalindromeRecursion(arr) {
+  if (arr.length <= 1) {
+    return true;
+  }
+  if (arr[0] !== arr[arr.length - 1]) {
+    return false;
+  }
+  return isPalindromeRecursion(arr.slice(1, -1));
+}
+
+const myArray = [1, 2, 3, 2, 1];
+
+console.log("Using Loop:", isPalindromeLoop(myArray)); // true
+console.log("Using Reverse:", isPalindromeReverse(myArray)); // true
+console.log("Using every():", isPalindromeEvery(myArray)); // true
+console.log("Using Recursion:", isPalindromeRecursion(myArray)); // true
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
